@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Amadon</title>
+</head>
+<body>
+	<h3>Amadon Store!</h3>
+	<table>
+		<tr>
+			<th>Item</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Actions</th>
+		</tr>
+		<tr>
+			<td>Dojo Tshirt</td>
+			<td>$19.99</td>
+			<form method="post" action="/amadon/checkout">
+			{% csrf_token %}
+			<td>
+				<select name="quantity">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+			</td>
+			<td>
+				<input type="hidden" name="price" value="tshirt">
+				<input type="submit" name="buy" value="Buy">
+			</td>
+			</form>
+		</tr>
+		<tr>
+			<td>Dojo Sweater</td>
+			<td>$29.99</td>
+			<form method="post" action="/amadon/checkout">
+			{% csrf_token %}	
+			<td>
+				<select name="quantity">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+			</td>
+			<td>
+				<input type="hidden" name="price" value="sweater">
+				<input type="submit" name="buy" value="Buy">
+			</td>
+			</form>
+		</tr>
+		<tr>
+			<td>Dojo Cup</td>
+			<td>$4.99</td>
+			<form method="post" action="/amadon/checkout">
+			{% csrf_token %}
+			<td>
+				<select name="quantity">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+			</td>
+			<td>
+				<input type="hidden" name="price" value="cup">
+				<input type="submit" name="buy" value="Buy">
+			</td>
+			</form>
+		</tr>
+		<tr>
+			<td>Algorithm Book</td>
+			<td>$49.99</td>
+			<form method="post" action="/amadon/checkout">
+			{% csrf_token %}
+			<td>
+				<select name="quantity">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+			</td>
+			<td>
+				<input type="hidden" name="price" value="book">
+				<input type="submit" name="buy" value="Buy">
+			</td>
+			</form>
+		</tr>
+	</table>
+</body>
+</html>

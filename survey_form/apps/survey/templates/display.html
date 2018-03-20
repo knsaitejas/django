@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Results</title>
+</head>
+<body>
+	<p>Thank you for submitting!</p>
+	<div>
+		<p>Name:{{request.session.name}}</p>
+		<p>Dojo Location:{{request.session.location}}</p>
+		<p>Favorite Language:{{request.session.language}}</p>
+		<p>Comment:{{request.session.comment}}</p>
+	</div>
+	<form method="post" action="/">
+		{% csrf_token %}
+		<input type="submit" name="back" value="Go Back">
+	</form>
+</body>
+</html>

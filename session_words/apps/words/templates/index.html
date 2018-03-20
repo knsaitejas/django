@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Session Words</title>
+	<link rel="stylesheet" type="text/css" href="../static/css.css">
+</head>
+<body>
+	<div>
+		<form method="post" action="/add">
+			{% csrf_token %}
+			<h2>Add a new word</h2>
+			<input type="text" name="word">
+			<p>Choose a color</p> 
+			<input type="radio" name="color" value="red">Red
+			<input type="radio" name="color" value="green">Green
+			<input type="radio" name="color" value="blue">Blue
+			<p></p>
+			<input type="checkbox" name="size" value="size">show in BIG fonts!
+			<input type="submit" name="add" value="Add to Session">
+		</form>
+	</div>
+	<div>
+		<form method="post" action="/reset">
+			{% csrf_token %}
+			<input type="submit" name="clear" value="Clear Session">
+		</form>
+		{{request.session.toAdd | safe}}
+	</div>
+</body>
+</html>

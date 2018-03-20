@@ -1,0 +1,29 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+div {
+	display: inline-block;
+	border: solid;
+	width: 200px;
+	padding: 10px;
+	margin-left: 10px;
+	margin-top: 10px; 
+}
+
+#activities {
+	display: block;
+	width: 920px;
+	height: 100px;
+	overflow: scroll;
+}
+
+.loss {
+	color: red;
+}
+
+.win {
+	color: green;
+}
+
