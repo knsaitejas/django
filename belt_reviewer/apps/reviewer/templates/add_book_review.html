@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Book and Review</title>
+	<link rel="stylesheet" type="text/css" href="../css/cs3.css">
+</head>
+<body>
+	<a href="/books">Home</a>
+	<a href="/logout">Logout</a>
+	<h3>{{book_title}}</h3>
+	<p>{{book_author}}</p>
+	<div class="reviews">
+		<h4>Reviews</h4>
+		{% for review in reviews %}
+			
+			<a href="/users/{{review.user.id}}">{{review.user.alias}}</a>
+			<p>{{review.rating}}</p>
+			<p>{{review.comment}}</p>
+			
+			{% if review.user.id == user %}
+			<a href="/delete/{{review.id}}">Delete this review</a>
+			{% endif %}
+		{% endfor %}
+	</div>
+	<div class="write_review">
+		<form method="post" action="/add_review">
+			{% csrf_token %}
+			Add a review: <textarea name="review"></textarea>
+			Rating <select name="rating">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			</select>
+			<input type="submit" name="submit" value="Submit Review">
+		</form>
+	</div>
+</body>
+</html>

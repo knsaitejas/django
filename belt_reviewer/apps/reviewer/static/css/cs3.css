@@ -1,0 +1,15 @@
+a {
+	display: block;
+}
+
+.reviews {
+	border: solid;
+	width: 400px;
+	display: inline-block;
+}
+
+.write_review {
+	display: inline-block;
+	border: solid;
+	vertical-align: top;
+}

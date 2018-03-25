@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Books home</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/cs2.css">
+</head>
+<body>
+	<div class="header">
+		<h5>Welcome, {{alias}}</h5>
+		<a href="/books/add">Add Book and Review</a>
+		<a href="/logout">Logout</a>
+	</div>
+	<div class="reviews">
+		<p>Recent Book Reviews</p>
+		{% for review in reviews|slice:':3' %}
+		<a href="/books/{{review.book.id}}">{{review.book.name}}</a>
+		<p>{{review.user.alias}}:</p>
+		<p>{{review.comment}}</p>
+		{% endfor %}
+	</div>
+	<div class="other_reviews">
+		{% for book in books %}
+		<a class='books' href="/books/{{book.id}}">{{book.name}}</a>
+		{% endfor %}
+	</div>
+</body>
+</html>
